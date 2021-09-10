@@ -9,8 +9,11 @@ const dotenv = require('dotenv');
 
 const errorMiddleware = require('./middlewares/errors')
 
+//setting up config file
+dotenv.config({ path:'backend/config/config.env'})
+
 // Setting up config file 
-if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend/config/config.env' })
+//if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend/config/config.env' })
 // dotenv.config({ path: 'backend/config/config.env' })
 
 app.use(express.json());
