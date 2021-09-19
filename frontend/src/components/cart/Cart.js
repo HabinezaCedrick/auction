@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 import MetaData from '../layout/MetaData'
 
-import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
 
@@ -50,10 +49,10 @@ const Cart = ({ history }) => {
                         <div className="col-12 col-lg-8">
 
                             {cartItems.map(item => (
-                                <Fragment>
+                                <div key={item.product}>
                                     <hr />
 
-                                    <div className="cart-item" key={item.product}>
+                                    <div className="cart-item" >
                                         <div className="row">
                                             <div className="col-4 col-lg-3">
                                                 <img src={item.image} alt="Laptop" height="90" width="115" />
@@ -85,7 +84,7 @@ const Cart = ({ history }) => {
                                         </div>
                                     </div>
                                     <hr />
-                                </Fragment>
+                                </div>
                             ))}
 
                         </div>
