@@ -1,11 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+const imageStyle = {
+    width: 'auto',
+    height: '150px'
+}
 const Product = ({ product, col }) => {
     return (
         <div className={`col-sm-12 col-md-6 col-lg-${col} my-3`}>
             <div className="card p-3 rounded">
                 <img
+                    style={imageStyle}
+                    alt="company logo"
                     className="card-img-top mx-auto"
                     src={product.images[0].url}
                 />
