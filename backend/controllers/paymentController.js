@@ -29,3 +29,31 @@ exports.sendStripApi = catchAsyncErrors(async (req, res, next) => {
     })
 
 })
+
+
+
+//Process MoMo payment
+// exports.processMoMo= catchAsyncErrors(async (req, res, next) => {
+    
+
+//     const paymentIntent = await opay.paymentIntents.create({
+//         amount: req.body.amount,
+//         currency: 'RWF',
+
+//         metadata: { integration_check: 'accept_a_payment' }
+//     });
+
+//     res.status(200).json({
+//         success: true,
+//     })
+
+// })
+
+
+// exports.sendOpayApi = catchAsyncErrors(async (req, res, next) => {
+
+//     res.status(200).json({
+//         success: true
+//     })
+
+// })

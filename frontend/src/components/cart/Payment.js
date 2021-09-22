@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckoutSteps'
@@ -10,6 +11,7 @@ import { createOrder, clearErrors } from '../../actions/orderActions'
 import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement } from '@stripe/react-stripe-js'
 
 import axios from 'axios'
+
 
 const options = {
     style: {
@@ -59,7 +61,46 @@ const Payment = ({ history }) => {
         amount: Math.round(orderInfo.totalPrice * 100)
     }
 
-    const submitHandler = async (e) => {
+    const payWithMoMo = (e) => {
+        e.preventDefault()
+        document.querySelector('#pay').disabled = true;
+
+        const Flutterwave = require('flutterwave-node-v3');
+        const flw = new Flutterwave(process.env.FLUTTERWAVE_API_KEY, process.env.FLUTTERWAVE_s);
+        try {
+        const button = document.getElementById("pay");
+        button.addEventListener("submit", payNow);
+
+        function payNow(e) {
+        //prevent normal form submit
+
+        e.preventDefault();
+            }
+            const payload = {
+                public_key: "FLWPUBK_TEST-a857474eb9267bcf8b37dd292285bd55-X",
+                tx_ref: "ak_"+Math.floor((Math.random()*10000000)+1),
+                amount: document.getElementById("amount").value,
+                currency: "RWF",
+                customer: {
+            email: "",
+            phonenumber: "",
+            name: "",
+            }}
+            
+    
+           const response =  async () => (flw.MobileMoney.rwanda(payload))
+           console.log(response);
+        } catch (error) {
+            console.log(error)
+        }     
+
+          
+        
+    }
+
+    
+
+    const payWithCard = async (e) => {
         e.preventDefault();
 
         document.querySelector('#pay_btn').disabled = true;
@@ -129,7 +170,7 @@ const Payment = ({ history }) => {
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onSubmit={submitHandler}>
+                    <form className="shadow-lg">
                         <h1 className="mb-4">Card Info</h1>
                         <div className="form-group">
                             <label htmlFor="card_num_field">Card Number</label>
@@ -164,11 +205,23 @@ const Payment = ({ history }) => {
 
                         <button
                             id="pay_btn"
-                            type="submit"
+                            onClick={payWithCard}
+                            
                             className="btn btn-block py-3"
                         >
-                            Pay {` - ${orderInfo && orderInfo.totalPrice}`}
+                            Pay With Card $:{` ${orderInfo && orderInfo.totalPrice}`}
                         </button>
+
+
+                       
+                        <button
+                            id="pay"
+                            onClick={payWithMoMo}
+                            className="btn btn-block py-3"
+                        >
+                            Pay With MoMo RWF: {`  ${orderInfo && orderInfo.totalPrice * 1000}`}
+                        </button>
+                     
 
                     </form>
                 </div>
