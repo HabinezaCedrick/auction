@@ -49,6 +49,7 @@ import axios from 'axios'
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 
+
 function App() {
 
   const [stripeApiKey, setStripeApiKey] = useState('');
@@ -66,11 +67,29 @@ function App() {
 
   }, [])
 
+  const [flutterwaveApiKey, setFlutterwaveApiKey] = useState('');
+
+  useEffect(() => {
+    store.dispatch(loadUser())
+
+    async function getFlutterwavApiKey() {
+      const { data } = await axios.get('/api/v1/flutterwaveapi');
+
+      setFlutterwaveApiKey(data.flutterwaveApiKey)
+    }
+
+    getFlutterwavApiKey();
+
+  }, [])
+
   const { user, isAuthenticated, loading } = useSelector(state => state.auth)
 
   return (
     <Router>
       <div className="App">
+
+        
+
         <Header />
         <div className="container container-fluid">
           <Route path="/" component={Home} exact />
@@ -86,6 +105,7 @@ function App() {
               <ProtectedRoute path="/payment" component={Payment} />
             </Elements>
           }
+
 
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
@@ -113,8 +133,10 @@ function App() {
           <Footer />
         )}
       </div>
+      
     </Router>
   );
 }
+
 
 export default App;
