@@ -1,19 +1,11 @@
 import React, { Fragment, useEffect } from 'react'
-
 import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckoutSteps'
-
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { createOrder, clearErrors } from '../../actions/orderActions'
-
 import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement } from '@stripe/react-stripe-js'
-
 import axios from 'axios'
-
-
-
-
 
 const options = {
     style: {
@@ -25,11 +17,6 @@ const options = {
         }
     },
 };
-
-
-
-
-
 
 const Payment = ({ history }) => {
 
@@ -69,10 +56,6 @@ const Payment = ({ history }) => {
         amount: Math.round(orderInfo.totalPrices * 100),
         
     }
-    
-    
-
-
     const payWithCard = async (e) => {
         e.preventDefault();
 
@@ -134,26 +117,20 @@ const Payment = ({ history }) => {
             alert.error(error.response.data.message)
         }  
     }
-
-
-
-
-
     const afripayform = async (e) => {
         if(afripayform == true) {
-            dispatch(createOrder(order))
+        dispatch(createOrder(order))
         history.push('/success')
         }
         else{
-            alert.error('There is some issue while payment processing');
+            //alert.error('There is some issue while payment processing');
             document.querySelector('#afripayform').disabled = false;
         }
-   
-    
 }
 
-const payAfter = async() => {
+const payNow = async() => {
     dispatch(createOrder(order))
+    history.push('/success')
 }
 
     
@@ -165,29 +142,22 @@ const payAfter = async() => {
             <CheckoutSteps shipping confirmOrder payment />
 
             ACCEPT PAYMENTS METHODS: <img src="/images/card2.jpg" />
-            
 
             <div className="row wrapper col-21 col-lg-18 mt-3">
             <div className="row d-flex justify-content-between">
-            <form action="https://afripay.africa/checkout/index.php" method="post"
-id="afripayform"className="shadow-lg">
+            <form action="https://afripay.africa/checkout/index.php" method="post" id="afripayform"className="shadow-lg">
     <h1 className="mb-4">Click Here:</h1>
-<button className="btn btn-block py-3" onClick={payAfter}>Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
+<button className="btn btn-block py-3" onClick={payNow}>Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
 <input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
 <input type="hidden" name="currency" value="RWF" ></input>
 <input type="hidden" name="comment" value="Order 122"></input>
 <input type="hidden" name="client_token" value=""></input>
-<input type="hidden" name="return_url" value="http://localhost:3000/success"></input>
+<input type="hidden" name="return_url" value="/success"></input>
 <input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
 <input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
-                            
-<input type="image"
-src="images/paynw.png" alt="" onclick="document.afripayform.submit();"></input>
-
-
-            </button>
-            </form>
-        
+<input type="image" src="images/paynw.png" alt="" onclick="document.afripayform.submit();"></input>
+ </button>
+ </form>
             <div className="col-25 col-lg-13 mt-9 order-confirm">
                     <form className="shadow-lg">
         
@@ -242,9 +212,7 @@ src="images/paynw.png" alt="" onclick="document.afripayform.submit();"></input>
 
         
 
-            </div>
-            
-            
+            </div>       
 </Fragment>
     )
 }

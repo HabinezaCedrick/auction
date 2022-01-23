@@ -2,7 +2,7 @@ const app = require('./app')
 const connectDatabase = require('./config/database')
 
 
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const cloudinary = require('cloudinary')
 
 //Handle Uncought exceptions
@@ -15,7 +15,7 @@ process.on('uncaughtException', err => {
 
 
 //setting up config file
-dotenv.config({path:'backend/config/config.env'})
+if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend/config/config.env' })
 
 
 
@@ -32,8 +32,8 @@ cloudinary.config({
 
 
 
-const server = app.listen(process.env.PORT || PORT, ()=>{
-console.log(`server stated on PORT:${process.env.PORT} in ${process.env.NODE_ENV} mode.`)
+const server = app.listen(process.env.PORT || PORT, () => {
+    console.log(`server stated on PORT:${process.env.PORT} in ${process.env.NODE_ENV} mode.`)
 })
 
 // Handle unhandled Promise rejections
@@ -44,4 +44,4 @@ process.on('unhandledRejection', err => {
     server.close(() => {
         process.exit(1)
     })
-}) 
+})
