@@ -133,7 +133,8 @@ const Payment = ({ history }) => {
     );
   };
 
-  const payWithAfripay = async () => {
+  const payWithAfripay = async (event) => {
+    event.preventDefault();
     try {
       await sendToAfriPay();
       dispatch(createOrder(order));
@@ -155,9 +156,13 @@ const Payment = ({ history }) => {
       />
       <div className="row wrapper col-21 col-lg-18 mt-3">
         <div className="row d-flex justify-content-between">
-          <form id="afripayform" className="shadow-lg">
+          <form
+            id="afripayform"
+            className="shadow-lg"
+            onSubmit={payWithAfripay}
+          >
             <h1 className="mb-4">Click Here:</h1>
-            <button className="btn btn-block py-3" onClick={payWithAfripay}>
+            <button className="btn btn-block py-3" type="submit">
               Pay Now {` - ${orderInfo && orderInfo.totalPrice}`} RWF
               <input type="image" src="images/paynw.png" alt="pay with mobil" />
             </button>
