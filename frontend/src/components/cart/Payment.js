@@ -140,8 +140,8 @@ const Payment = ({ history }) => {
       dispatch(createOrder(order));
       history.push("/success");
     } catch (e) {
-      alert.error("There is some issue while payment processing:", e);
-      document.querySelector("#afripayform").disabled = false;
+      // alert.error("There is some issue while payment processing:", e);
+      document.querySelector("#afripayform").disabled = true;
     }
   };
 
@@ -164,7 +164,6 @@ const Payment = ({ history }) => {
             <h1 className="mb-4">Click Here:</h1>
             <button className="btn btn-block py-3" type="submit">
               Pay Now {` - ${orderInfo && orderInfo.totalPrice}`} RWF
-              <input type="image" src="images/paynw.png" alt="pay with mobil" />
             </button>
           </form>
           <div className="col-25 col-lg-13 mt-9 order-confirm">
