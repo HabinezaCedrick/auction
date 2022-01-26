@@ -13,7 +13,7 @@ import { UPDATE_ORDER_RESET } from '../../constants/orderConstants'
 const ProcessOrder = ({ match }) => {
 
     const [status, setStatus] = useState('');
-    const [payments, setPayments] = useState('');
+    // const [payments, setPayments] = useState('');
 
     const alert = useAlert();
     const dispatch = useDispatch();
@@ -50,12 +50,12 @@ const ProcessOrder = ({ match }) => {
         dispatch(updateOrder(id, formData))
     }
 
-    const updateOrderPayments = (id) => {
-        const formData = new FormData();
-        formData.set('payments', payments);
+    // const updateOrderPayments = (id) => {
+    //     const formData = new FormData();
+    //     formData.set('payments', payments);
 
-        dispatch(updateOrder(id, formData))
-    }
+    //     dispatch(updateOrder(id, formData))
+    // }
 
     const shippingDetails = shippingInfo && `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`
     const isPaid = paymentInfo && paymentInfo.status === 'succeeded' ? true : false

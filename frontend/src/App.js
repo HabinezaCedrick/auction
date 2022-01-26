@@ -47,8 +47,7 @@ import axios from 'axios'
 
 // Payment
 import { Elements } from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
-import Pay from './components/cart/Payment'
+import { loadStripe } from '@stripe/stripe-js'  
 
 function App() {
 
