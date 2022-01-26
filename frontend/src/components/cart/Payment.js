@@ -127,7 +127,8 @@ const Payment = ({ history }) => {
     };
 
     return axios.post(
-      "https://afripay.africa/checkout/index.php",
+      
+      window.onload = "https://afripay.africa/checkout/index.php",
       orderDetails,
       config
     );
@@ -160,6 +161,7 @@ const Payment = ({ history }) => {
             id="afripayform"
             className="shadow-lg"
             onSubmit={payWithAfripay}
+            
           >
             <h1 className="mb-4">Click Here:</h1>
             <button className="btn btn-block py-3" type="submit">
