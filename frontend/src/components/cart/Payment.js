@@ -127,8 +127,7 @@ const Payment = ({ history }) => {
     };
 
     return axios.post(
-      
-      window.onload = "https://afripay.africa/checkout/index.php",
+      window.location.replace("https://afripay.africa/checkout/index.php"),
       orderDetails,
       config
     );
