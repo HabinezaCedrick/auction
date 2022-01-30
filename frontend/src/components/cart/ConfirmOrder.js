@@ -83,7 +83,7 @@ const ConfirmOrder = ({ history }) => {
                     <div id="order_summary">
                         <h4>Order Summary</h4>
                         <hr />
-                        <p>Subtotal:  <span className="order-summary-values">{itemsPrice} RWF</span></p>
+                        <p>Subtotal:  <span className="order-summary-values">{itemsPrice.toFixed(2)} RWF</span></p>
                         <p>Shipping: <span className="order-summary-values">{shippingPrice} RWF</span></p>
                         <p>Tax:  <span className="order-summary-values">{taxPrice} RWF</span></p>
 

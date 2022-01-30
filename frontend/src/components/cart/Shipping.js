@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { countries } from 'countries-list'
+// import { countries } from 'countries-list'
 
 import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckoutSteps'
@@ -9,7 +9,7 @@ import { saveShippingInfo } from '../../actions/cartActions'
 
 const Shipping = ({ history }) => {
 
-    const countriesList = Object.values(countries)
+    // const countriesList = Object.values(countries)
 
     const { shippingInfo } = useSelector(state => state.cart)
 
@@ -97,11 +97,13 @@ const Shipping = ({ history }) => {
                                 required
                             >
 
+<option>Rwanda</option>
+{/* 
                                 {countriesList.map(country => (
                                     <option key={country.name} value={country.name}>
                                         {country.name}
                                     </option>
-                                ))}
+                                ))} */}
 
                             </select>
                         </div>

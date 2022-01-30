@@ -14,7 +14,7 @@ const OrderDetails = ({ match }) => {
     const dispatch = useDispatch();
 
     const { loading, error, order = {} } = useSelector(state => state.orderDetails)
-    const { shippingInfo, orderItems, paymentInfo, user, totalPrice, orderStatus } = order
+    const { shippingInfo, orderItems, user, totalPrice, orderStatus} = order
 
     useEffect(() => {
         dispatch(getOrderDetails(match.params.id));
@@ -27,7 +27,7 @@ const OrderDetails = ({ match }) => {
 
     const shippingDetails = shippingInfo && `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`
 
-    const isPaid = paymentInfo && paymentInfo.status === 'succeeded' ? true : false
+    // const isPaid = paymentInfo && paymentInfo.status === 'succeeded' ? true : false
 
     return (
         <Fragment>
@@ -48,15 +48,12 @@ const OrderDetails = ({ match }) => {
 
                             <hr />
 
-                            <h4 className="my-4">Stripe Payment</h4>
-                            <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "PAID" : "NOT PAID"}</b></p>
-
-                            <h4 className="my-4">Afripay Payment</h4>
-                            <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "PAID" : "NOT PAID"}</b></p>
+                            {/* <h4 className="my-4">Stripe Payment</h4>
+                            <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "PAID" : "NOT PAID"}</b></p> */}
 
 
-                            <h4 className="my-4">Order Status:</h4>
-                            <p className={order.orderStatus && String(order.orderStatus).includes('Delivered') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
+                            <h4 className="my-4">Order and Payment Status:</h4>
+                            <p className={order.orderStatus && String(order.orderStatus).includes('Delivered and Paid') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
 
 
                             <h4 className="my-4">Order Items:</h4>
