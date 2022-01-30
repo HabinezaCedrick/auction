@@ -146,7 +146,7 @@ const payWithAfripay = async() => {
 
             <CheckoutSteps shipping confirmOrder payment />
 
-            ACCEPT PAYMENTS METHODS: <img src="/images/card2.jpg" alt='Payment Methods'/>
+                  <center> ACCEPTED PAYMENTS METHODS:       <img src="/images/paylogo.jpg" alt='Payment Methods'/></center>
             
 
             <div className="row wrapper col-21 col-lg-18 mt-3">
@@ -175,6 +175,7 @@ src="images/paynw.png" alt="" onclick="document.afripayform.submit();"></input>
                     <form className="shadow-lg">
         
                         <h1 className="mb-4">Card Info</h1>
+                        <p>Under Maintainance</p>
                         <div className="form-group">
                             <label htmlFor="card_num_field">Card Number</label>
                             <CardNumberElement

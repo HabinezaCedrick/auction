@@ -6,6 +6,7 @@ import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { register, clearErrors } from '../../actions/userActions'
 
+
 const Register = ({ history }) => {
 
     const [user, setUser] = useState({
