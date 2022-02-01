@@ -23,7 +23,7 @@ const Footer = () => {
                     <ol> ShopIT Ltd is an online company that works in Rwanda <br></br> where you can order our products and <br></br>then we deliver for free at your home.</ol>
                    
                 <ul>
-                    <li>ACCEPTED PAYMENTS METHODS:</li>
+                    <li>Accpted Payment Method:</li>
                     <ol><img src="/images/paylogo.jpg" alt='Payment Methods'/></ol>
                     </ul>
                 
@@ -43,7 +43,7 @@ const Footer = () => {
                 </div>
                 
                 <div className="footer-bar">
-                    <p>&copy;Shopping Cart - 2020-2022, <a href="www.shopitltd.com">www.shopitltd.com</a> All Rights Reserved</p>
+                    <p>&copy;ShopIT Ltd - 2020-2022, <a href="www.shopitltd.com">www.shopitltd.com</a> All Rights Reserved</p>
                 </div>
             </div>
         </footer>

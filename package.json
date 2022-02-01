@@ -28,10 +28,18 @@
         "nodemailer": "^6.4.16",
         "parse-data-uri": "^0.2.0",
         "stripe": "^8.128.0",
-        "validator": "^13.1.17"
+        "validator": "^13.1.17",
+        "autoprefixer": "^6.5.4"
     },
     "devDependencies": {
         "eslint": "^7.32.0",
         "nodemon": "^2.0.6"
-    }
+    },
+        "private": true,
+        "browserslist": [
+          "last 1 version",
+          "> 1%",
+          "IE 10"
+        ]
+      
 }

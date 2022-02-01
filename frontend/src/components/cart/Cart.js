@@ -38,6 +38,10 @@ const Cart = ({ history }) => {
         history.push('/login?redirect=shipping')
     }
 
+    const continueShopping = () => {
+        history.push('/')
+    }
+
     return (
         <Fragment>
             <MetaData title={'Your Cart'} />
@@ -97,6 +101,7 @@ const Cart = ({ history }) => {
                                 <p>Est. total: <span className="order-summary-values">{cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)} RWF</span></p>
 
                                 <hr />
+                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={continueShopping}>Continue Shopping</button>
                                 <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Check out</button>
                             </div>
                         </div>
