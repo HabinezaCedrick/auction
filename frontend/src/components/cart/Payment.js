@@ -11,10 +11,6 @@ import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcEl
 
 import axios from 'axios'
 
-
-
-
-
 const options = {
     style: {
         base: {
@@ -25,11 +21,6 @@ const options = {
         }
     },
 };
-
-
-
-
-
 
 const Payment = ({ history }) => {
 
@@ -146,8 +137,8 @@ const payWithAfripay = async() => {
 
             <CheckoutSteps shipping confirmOrder payment />
 
-                  <center> ACCEPTED PAYMENTS METHODS:       <img src="/images/paylogo.jpg" alt='Payment Methods'/></center>
-            
+                  <center> ACCEPTED PAYMENTS METHODS:
+                    <img src="/images/paylogo.jpg" alt='Payment Methods'/></center>
 
             <div className="row wrapper col-21 col-lg-18 mt-3">
             <div className="row d-flex justify-content-between">
@@ -165,7 +156,7 @@ id="afripayform"className="shadow-lg">
 <input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
                     
 <input type="image"
-src="images/paynw.png" alt="" onclick="document.afripayform.submit();"></input>
+src="images/paynw.png" alt=""></input>
 
 
             </button>
