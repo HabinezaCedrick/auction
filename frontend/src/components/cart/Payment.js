@@ -143,9 +143,9 @@ const payWithAfripay = async() => {
             <div className="row wrapper col-21 col-lg-18 mt-3">
             <div className="row d-flex justify-content-between">
             <form action="https://afripay.africa/checkout/index.php" method="post"
-id="afripayform"className="shadow-lg">
+className="shadow-lg" >
 <h1 className="mb-4">Click Here:</h1>
-<button className="btn btn-block py-3" onClick={payWithAfripay}>
+<button className="btn btn-block py-3" id="afripayform" onClick={payWithAfripay}>
   Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
 <input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
 <input type="hidden" name="currency" value="RWF" ></input>
