@@ -143,14 +143,12 @@ button.addEventListener("click", dispatch(createOrder(order)))
                     <img src="/images/paylogo.jpg" alt='Payment Methods'/></center>
 
             <div className="row wrapper col-21 col-lg-18 mt-3">
-            <div className="row d-flex justify-content-between">
+            
             <form action="https://afripay.africa/checkout/index.php" method="post"
-id="afripayform"className="shadow-lg">
-<h1 className="mb-4">Click Here:</h1>
-<button className="btn btn-block py-3" onClick={payWithAfripay}>
+id="afripayform"className="btn mr-3 "  onClick={payWithAfripay}>
+{/* <h1 className="mb-4">Click Here:</h1> */}
+<button className="btn py-3 shadow-lg">
   Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
-
-  </button>
 <input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
 <input type="hidden" name="currency" value="RWF" ></input>
 <input type="hidden" name="comment" value={order._id}></input>
@@ -161,7 +159,7 @@ id="afripayform"className="shadow-lg">
                     
 <input type="image"
 src="images/paynw.png" alt=""></input>
-
+</button>
             </form>
         
             <div className="col-25 col-lg-13 mt-9 order-confirm">
@@ -212,7 +210,7 @@ src="images/paynw.png" alt=""></input>
                     </form>
                 </div>
 
-                </div>
+                
             
 
 
