@@ -126,7 +126,9 @@ const Payment = ({ history }) => {
 
     
 const payWithAfripay = async() => {
-    dispatch(createOrder(order))
+    
+const button = document.querySelector("button")
+button.addEventListener("click", dispatch(createOrder(order)))
 }
 
     
@@ -143,9 +145,9 @@ const payWithAfripay = async() => {
             <div className="row wrapper col-21 col-lg-18 mt-3">
             <div className="row d-flex justify-content-between">
             <form action="https://afripay.africa/checkout/index.php" method="post"
-id="afripayform"className="shadow-lg" onClick={payWithAfripay}>
+id="afripayform"className="shadow-lg" >
 <h1 className="mb-4">Click Here:</h1>
-<button className="btn btn-block py-3">
+<button className="btn btn-block py-3" onClick={payWithAfripay}>
   Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
 <input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
 <input type="hidden" name="currency" value="RWF" ></input>

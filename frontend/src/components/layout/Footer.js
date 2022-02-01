@@ -34,7 +34,7 @@ const Footer = () => {
                         <ol><a href="">+250788872889</a></ol>
                     </ul>
                     <ul>
-                        <li>Our Social Media: cedro</li>
+                        <li>Our Social Media:</li>
                         <ol><a href="" className="fa fa-facebook">  Facebook</a></ol>
                         <ol><a href="" class="fa fa-instagram">  Instagram</a></ol>
                         <ol><a href="https://twitter.com/HabinezaCedric/status/1246284234865680386" class="fa fa-twitter">  Twitter</a></ol>
