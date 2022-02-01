@@ -126,9 +126,13 @@ const Payment = ({ history }) => {
 
     
 const payWithAfripay = async() => {
-const button = document.querySelector("button")
+ 
+  const button = document.querySelector("button")
 button.addEventListener("click", dispatch(createOrder(order)))
 }
+
+    
+
     return (
         <Fragment>
             <MetaData title={'Payment'} />
@@ -140,12 +144,13 @@ button.addEventListener("click", dispatch(createOrder(order)))
 
             <div className="row wrapper col-21 col-lg-18 mt-3">
             <div className="row d-flex justify-content-between">
-              
-<form action="https://afripay.africa/checkout/index.php" method="post"
-id="afripayform"className="shadow-lg mr-3" >
+            <form action="https://afripay.africa/checkout/index.php" method="post"
+id="afripayform"className="shadow-lg">
 <h1 className="mb-4">Click Here:</h1>
-<button className="btn btn-block py-3"  type="submit" onClick={payWithAfripay}>
+<button className="btn btn-block py-3" onClick={payWithAfripay}>
   Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
+
+  </button>
 <input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
 <input type="hidden" name="currency" value="RWF" ></input>
 <input type="hidden" name="comment" value={order._id}></input>
@@ -153,7 +158,10 @@ id="afripayform"className="shadow-lg mr-3" >
 <input type="hidden" name="return_url" value={'http://kshopit.herokuapp.com/afripaysuccess'}></input>
 <input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
 <input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
-            </button>
+                    
+<input type="image"
+src="images/paynw.png" alt=""></input>
+
             </form>
         
             <div className="col-25 col-lg-13 mt-9 order-confirm">
