@@ -145,7 +145,7 @@ const payWithAfripay = async() => {
             <form action="https://afripay.africa/checkout/index.php" method="post"
 className="shadow-lg" >
 <h1 className="mb-4">Click Here:</h1>
-<button className="btn btn-block py-3" id="afripayform" onClick={payWithAfripay}>
+<button className="btn btn-block py-3" id="afripayform" onClick={payWithAfripay && dispatch(createOrder(order))}>
   Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
 <input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
 <input type="hidden" name="currency" value="RWF" ></input>
@@ -154,9 +154,6 @@ className="shadow-lg" >
 <input type="hidden" name="return_url" value={'http://kshopit.herokuapp.com/afripaysuccess'}></input>
 <input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
 <input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
-                    
-<input type="image"
-src="images/paynw.png" alt=""></input>
 
 
             </button>
