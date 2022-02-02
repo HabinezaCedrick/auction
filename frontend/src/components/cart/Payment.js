@@ -10,6 +10,8 @@ import { createOrder, clearErrors } from '../../actions/orderActions'
 import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement } from '@stripe/react-stripe-js'
 
 import axios from 'axios'
+import Loader from '../layout/Loader'
+
 
 const options = {
     style: {
@@ -30,7 +32,7 @@ const Payment = ({ history }) => {
     const dispatch = useDispatch();
 
     const { user } = useSelector(state => state.auth)
-    const { cartItems, shippingInfo } = useSelector(state => state.cart);
+    const { loading, cartItems, shippingInfo } = useSelector(state => state.cart);
     const { error } = useSelector(state => state.newOrder)
 
     useEffect(() => {
@@ -122,23 +124,39 @@ const Payment = ({ history }) => {
         }  
     }
 
-    // const payWithAfripay = async() => {
-    //   const button = document.querySelector("button")
-    // button.addEventListener("click", dispatch(createOrder(order)))
-    // }
+    const payWithAfripay = async() => {
+      const button = document.querySelector("button")
+    button.addEventListener("click", dispatch(createOrder(order)))
+    }
 
     return (
+
+      <Fragment>
+        {loading ? <Loader /> : (
+      
         <Fragment>
             <MetaData title={'Payment'} />
 
             <CheckoutSteps shipping confirmOrder payment />
-
+            
                   <center> ACCEPTED PAYMENTS METHODS:
                     <img src="/images/paylogo.jpg" alt='Payment Methods'/></center>
 
 <div className="row wrapper col-21 col-lg-18 mt-3">
 <div className="row d-flex justify-content-between">
-
+<form action="https://afripay.africa/checkout/index.php" method="post" id="afripayform"className="shadow-lg">
+<h1 className="mb-4">Click Here:</h1>
+<button className="btn btn-block py-3" onClick={payWithAfripay}>
+  Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
+<input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
+<input type="hidden" name="currency" value="RWF" ></input>
+<input type="hidden" name="comment" value={order._id}></input>
+<input type="hidden" name="client_token" value={user && user.name}></input>
+<input type="hidden" name="return_url" value={'http://kshopit.herokuapp.com/afripaysuccess'}></input>
+<input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
+<input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
+</button>
+</form>
         
 
             <div className="col-25 col-lg-13 mt-9 order-confirm">
@@ -190,28 +208,18 @@ const Payment = ({ history }) => {
                 </div>
 
                 </div>
-{/* <form action="https://afripay.africa/checkout/index.php" method="post" id="afripayform"className="shadow-lg mr-3">
-<h1 className="mb-4">Click Here:</h1>
-<button className="btn btn-block py-3" onClick={payWithAfripay}>
-  Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
-<input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
-<input type="hidden" name="currency" value="RWF" ></input>
-<input type="hidden" name="comment" value={order._id}></input>
-<input type="hidden" name="client_token" value={user && user.name}></input>
-<input type="hidden" name="return_url" value={'http://kshopit.herokuapp.com/afripaysuccess'}></input>
-<input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
-<input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
-</button>
-</form> */}
+            
 
 
 
         
 
             </div>
-            
-            
+            </Fragment>     
+        )} 
 </Fragment>
+        
     )
 }
+       
 export default Payment
