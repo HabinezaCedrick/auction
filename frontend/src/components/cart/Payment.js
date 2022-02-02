@@ -124,7 +124,7 @@ const Payment = ({ history }) => {
 
     const payWithAfripay = async() => {
       const button = document.querySelector("button")
-    button.addEventListener(dispatch(createOrder(order)))
+    button.addEventListener("click", dispatch(createOrder(order)))
     }
 
     return (
@@ -136,26 +136,11 @@ const Payment = ({ history }) => {
                   <center> ACCEPTED PAYMENTS METHODS:
                     <img src="/images/paylogo.jpg" alt='Payment Methods'/></center>
 
-            <div className="row wrapper col-21 col-lg-18 mt-3">
-            <div className="row d-flex justify-content-between">
-            <form action="https://afripay.africa/checkout/index.php" method="post"
-id="afripayform"className="shadow-lg">
-<h1 className="mb-4">Click Here:</h1>
-<button className="btn btn-block py-3" onClick={payWithAfripay}>
-  Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
-<input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
-<input type="hidden" name="currency" value="RWF" ></input>
-<input type="hidden" name="comment" value={order._id}></input>
-<input type="hidden" name="client_token" value={user && user.name}></input>
-<input type="hidden" name="return_url" value={'http://kshopit.herokuapp.com/afripaysuccess'}></input>
-<input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
-<input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
-                    
-<input type="image"
-src="images/paynw.png" alt=""></input>
-</button>
-            </form>
+<div className="row wrapper col-21 col-lg-18 mt-3">
+<div className="row d-flex justify-content-between">
+
         
+
             <div className="col-25 col-lg-13 mt-9 order-confirm">
                     <form className="shadow-lg">
         
@@ -205,7 +190,19 @@ src="images/paynw.png" alt=""></input>
                 </div>
 
                 </div>
-            
+<form action="https://afripay.africa/checkout/index.php" method="post" id="afripayform"className="shadow-lg mr-3">
+<h1 className="mb-4">Click Here:</h1>
+<button className="btn btn-block py-3" onClick={payWithAfripay}>
+  Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
+<input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
+<input type="hidden" name="currency" value="RWF" ></input>
+<input type="hidden" name="comment" value={order._id}></input>
+<input type="hidden" name="client_token" value={user && user.name}></input>
+<input type="hidden" name="return_url" value={'http://kshopit.herokuapp.com/afripaysuccess'}></input>
+<input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
+<input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
+</button>
+</form>
 
 
 

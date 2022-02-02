@@ -681,7 +681,7 @@ footer {
   font-weight: 200;
 }
 
-.footer-links ol {
+.footer-links ol a {
   color: rgb(255, 255, 255);
   font-size: 10 pt;
   margin: 2px 0;

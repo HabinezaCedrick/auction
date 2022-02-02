@@ -29,14 +29,14 @@ const Footer = () => {
                 
                     <ul>
                         <li>Contact Us:</li>
-                        <ol><a href="">shopitltd@gmail.com</a></ol>
-                        <ol><a href="">+250788997616</a></ol>
-                        <ol><a href="">+250788872889</a></ol>
+                        <ol>shopitltd@gmail.com</ol>
+                        <ol>+250788997616</ol>
+                        <ol>+250788872889</ol>
                     </ul>
                     <ul>
                         <li>Our Social Media:</li>
-                        <ol><a href="" className="fa fa-facebook">  Facebook</a></ol>
-                        <ol><a href="" class="fa fa-instagram">  Instagram</a></ol>
+                        <ol><a href="https://facebook.com/" className="fa fa-facebook">  Facebook</a></ol>
+                        <ol><a href="https://instagram.com/" class="fa fa-instagram">  Instagram</a></ol>
                         <ol><a href="https://twitter.com/HabinezaCedric/status/1246284234865680386" class="fa fa-twitter">  Twitter</a></ol>
                     </ul>
                     
