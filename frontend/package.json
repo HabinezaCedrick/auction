@@ -13,8 +13,6 @@
     "@testing-library/user-event": "^12.5.0",
     "axios": "^0.21.0",
     "countries-list": "^2.5.6",
-    "flutterwave-node-v3": "^1.0.9",
-    "flutterwave-react-v3": "^1.1.0",
     "https": "^1.0.0",
     "mdbreact": "^5.0.1",
     "rc-slider": "^9.6.5",
@@ -53,6 +51,7 @@
       "not op_mini all"
     ],
     "development": [
+      ">0%",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"

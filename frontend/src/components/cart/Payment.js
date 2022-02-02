@@ -63,7 +63,6 @@ const Payment = ({ history }) => {
     
     const payWithCard = async (e) => {
         e.preventDefault();
-
         document.querySelector('#pay_btn').disabled = true;
 
         let res;
@@ -123,15 +122,10 @@ const Payment = ({ history }) => {
         }  
     }
 
-
-    
-const payWithAfripay = async() => {
- 
-  const button = document.querySelector("button")
-button.addEventListener("click", dispatch(createOrder(order)))
-}
-
-    
+    const payWithAfripay = async() => {
+      const button = document.querySelector("button")
+    button.addEventListener(dispatch(createOrder(order)))
+    }
 
     return (
         <Fragment>
@@ -143,11 +137,11 @@ button.addEventListener("click", dispatch(createOrder(order)))
                     <img src="/images/paylogo.jpg" alt='Payment Methods'/></center>
 
             <div className="row wrapper col-21 col-lg-18 mt-3">
-            
+            <div className="row d-flex justify-content-between">
             <form action="https://afripay.africa/checkout/index.php" method="post"
-id="afripayform"className="btn mr-3 "  onClick={payWithAfripay}>
-{/* <h1 className="mb-4">Click Here:</h1> */}
-<button className="btn py-3 shadow-lg">
+id="afripayform"className="shadow-lg">
+<h1 className="mb-4">Click Here:</h1>
+<button className="btn btn-block py-3" onClick={payWithAfripay}>
   Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
 <input type="hidden" name="amount" value={orderInfo.totalPrice}></input>
 <input type="hidden" name="currency" value="RWF" ></input>
@@ -210,7 +204,7 @@ src="images/paynw.png" alt=""></input>
                     </form>
                 </div>
 
-                
+                </div>
             
 
 
