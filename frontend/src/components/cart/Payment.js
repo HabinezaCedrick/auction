@@ -122,10 +122,10 @@ const Payment = ({ history }) => {
         }  
     }
 
-    const payWithAfripay = async() => {
-      const button = document.querySelector("button")
-    button.addEventListener("click", dispatch(createOrder(order)))
-    }
+    // const payWithAfripay = async() => {
+    //   const button = document.querySelector("button")
+    // button.addEventListener("click", dispatch(createOrder(order)))
+    // }
 
     return (
         <Fragment>
@@ -190,7 +190,7 @@ const Payment = ({ history }) => {
                 </div>
 
                 </div>
-<form action="https://afripay.africa/checkout/index.php" method="post" id="afripayform"className="shadow-lg mr-3">
+{/* <form action="https://afripay.africa/checkout/index.php" method="post" id="afripayform"className="shadow-lg mr-3">
 <h1 className="mb-4">Click Here:</h1>
 <button className="btn btn-block py-3" onClick={payWithAfripay}>
   Pay Now {` - ${(orderInfo && orderInfo.totalPrice)}`} RWF
@@ -202,7 +202,7 @@ const Payment = ({ history }) => {
 <input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
 <input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
 </button>
-</form>
+</form> */}
 
 
 
