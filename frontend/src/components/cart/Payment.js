@@ -10,7 +10,6 @@ import { createOrder, clearErrors } from '../../actions/orderActions'
 import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcElement } from '@stripe/react-stripe-js'
 
 import axios from 'axios'
-import Loader from '../layout/Loader'
 
 
 const options = {
@@ -32,7 +31,7 @@ const Payment = ({ history }) => {
     const dispatch = useDispatch();
 
     const { user } = useSelector(state => state.auth)
-    const { loading, cartItems, shippingInfo } = useSelector(state => state.cart);
+    const { cartItems, shippingInfo } = useSelector(state => state.cart);
     const { error } = useSelector(state => state.newOrder)
 
     useEffect(() => {
@@ -125,14 +124,14 @@ const Payment = ({ history }) => {
     }
 
     const payWithAfripay = async() => {
-      const button = document.querySelector("button")
-    button.addEventListener("click", dispatch(createOrder(order)))
+     dispatch(createOrder(order))
+    //  history.push("/afripaysuccess")
     }
 
     return (
 
-      <Fragment>
-        {loading ? <Loader /> : (
+      
+        
       
         <Fragment>
             <MetaData title={'Payment'} />
@@ -212,8 +211,6 @@ const Payment = ({ history }) => {
 
             </div>
             </Fragment>     
-        )} 
-</Fragment>
         
     )
 }
