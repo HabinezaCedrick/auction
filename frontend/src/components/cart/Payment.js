@@ -152,7 +152,7 @@ const Payment = ({ history }) => {
 <input type="hidden" name="currency" value="RWF" ></input>
 <input type="hidden" name="comment" value={order._id}></input>
 <input type="hidden" name="client_token" value={user && user.name}></input>
-<input type="hidden" name="return_url" value={'http://kshopit.herokuapp.com/afripaysuccess'}></input>
+<input type="hidden" name="return_url" value={'http://kshopit.herokuapp.com/afripaysuccess'}></input> 
 <input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
 <input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
 </button>
@@ -160,10 +160,10 @@ const Payment = ({ history }) => {
         
 
             <div className="col-25 col-lg-13 mt-9 order-confirm">
-                    <form className="shadow-lg">
+                    <form className="shadow-lg">  
         
                         <h1 className="mb-4">Card Info</h1>
-                        <p>Under Maintainance</p>
+                        <p>! Under Maintainance</p>
                         <div className="form-group">
                             <label htmlFor="card_num_field">Card Number</label>
                             <CardNumberElement
@@ -209,10 +209,6 @@ const Payment = ({ history }) => {
 
                 </div>
             
-
-
-
-        
 
             </div>
             </Fragment>     
