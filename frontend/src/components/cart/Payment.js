@@ -122,7 +122,7 @@ const Payment = ({ history }) => {
             alert.error(error.response.data.message)
         }  
     }
-
+    
     const payWithAfripay = async() => {
      dispatch(createOrder(order))
     //  history.push("/afripaysuccess")
@@ -151,7 +151,7 @@ const Payment = ({ history }) => {
 <input type="hidden" name="currency" value="RWF" ></input>
 <input type="hidden" name="comment" value={order._id}></input>
 <input type="hidden" name="client_token" value={user && user.name}></input>
-<input type="hidden" name="return_url" value={'http://kshopit.herokuapp.com/afripaysuccess'}></input> 
+<input type="hidden" name="return_url" value={'/afripaysuccess'}></input> 
 <input type="hidden" name="app_id" value="10c91e7ce9366b9641a7b999bf76ccb9"></input>
 <input type="hidden" name="app_secret" value="JDJ5JDEwJC4yaUpy"></input>
 </button>
