@@ -94,7 +94,7 @@ const Shipping = ({ history }) => {
                                 className="form-control"
                                 value={country}
                                 onChange={(e) => setCountry(e.target.value)}
-                                required
+                                
                             >
 
                                 {countriesList.map(country => (
