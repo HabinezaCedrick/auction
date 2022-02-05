@@ -698,3 +698,24 @@ footer {
   font-size: 12pt;
   opacity: 0.8;
 }
+
+
+
+/*Scroll*/
+div.scrollmenu {
+  
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: rgb(248, 242, 242);
+}

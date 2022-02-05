@@ -19,7 +19,8 @@ const orderSchema = mongoose.Schema({
             required: true
         },
         country: {
-            type: String
+            type: String,
+            required: true
         }
     },
     user: {

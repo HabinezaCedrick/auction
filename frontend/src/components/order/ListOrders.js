@@ -70,6 +70,7 @@ const ListOrders = () => {
                         <i className="fa fa-eye"></i>
                     </Link>
             })
+            
         })
 
         return data;
@@ -81,7 +82,7 @@ const ListOrders = () => {
             <MetaData title={'My Orders'} />
 
             <h1 className="my-5">My Orders</h1>
-
+            <div class="scrollmenu">
             {loading ? <Loader /> : (
                 <MDBDataTable
                     data={setOrders()}
@@ -91,7 +92,7 @@ const ListOrders = () => {
                     hover
                 />
             )}
-
+            </div>
         </Fragment>
     )
 }

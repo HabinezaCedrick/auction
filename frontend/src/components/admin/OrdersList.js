@@ -104,7 +104,7 @@ const OrdersList = ({ history }) => {
                 <div className="col-12 col-md-10">
                     <Fragment>
                         <h1 className="my-5">All Orders</h1>
-
+                        <div class="scrollmenu">
                         {loading ? <Loader /> : (
                             <MDBDataTable
                                 data={setOrders()}
@@ -114,7 +114,7 @@ const OrdersList = ({ history }) => {
                                 hover
                             />
                         )}
-
+                        </div>
                     </Fragment>
                 </div>
             </div>

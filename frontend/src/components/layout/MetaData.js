@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 const MetaData = ({ title }) => {
     return (
         <Helmet>
-            <title>{`${title} - ShopIT Ltd`}</title>
+            <title>{`${title} - KigaliMall`}</title>
         </Helmet>
     )
 }

@@ -1,7 +1,7 @@
 {
-    "name": "shopit",
+    "name": "kigalimall",
     "version": "1.0.0",
-    "description": "Full e-commerce site in Rwanda",
+    "description": "Full E-commerce site in Rwanda",
     "main": "server.js",
     "scripts": {
         "start": "SET node backend/server.js",

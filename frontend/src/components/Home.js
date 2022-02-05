@@ -82,12 +82,13 @@ const Home = ({ match }) => {
                                                             }}
                                                             key={category}
                                                             onClick={() => setCategory(category)}
+                                                            
                                                         >
                                                             {category}
                                                         </li> 
                         
-
-                                                    ))}                                                    
+                        
+                                                    ))}                                                  
                    </div>
                     </div> 
                    <span className='text-white'><h5 className='fa fa-phone'>   <b>0788997616</b></h5></span> 

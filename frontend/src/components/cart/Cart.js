@@ -102,7 +102,7 @@ const Cart = ({ history }) => {
 
                                 <hr />
                                 <button id="checkout_btn" className="btn btn-primary btn-block" onClick={continueShopping}>Continue Shopping</button>
-                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Check out</button>
+                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Checkout</button>
                             </div>
                         </div>
                     </div>

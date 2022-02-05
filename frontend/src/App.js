@@ -72,6 +72,7 @@ function App() {
 
   return (
     <Router>
+      {loading=>Header}
       <div className="App">
         <Header />
         <div className="container container-fluid">
@@ -115,8 +116,9 @@ function App() {
         <ProtectedRoute path="/admin/user/:id" isAdmin={true} component={UpdateUser} exact />
         <ProtectedRoute path="/admin/reviews" isAdmin={true} component={ProductReviews} exact />
 
+       
         {!loading && (!isAuthenticated || user.role !== 'admin') && (
-          <Footer />
+          <Footer/>
         )}
       </div>
     </Router>
