@@ -138,6 +138,7 @@ const Payment = ({ history }) => {
 
       <div className="row wrapper col-21 col-lg-18 mt-3">
         <div className="row d-flex justify-content-between">
+          
           <form
             action="https://afripay.africa/checkout/index.php"
             method="post"
@@ -162,7 +163,7 @@ const Payment = ({ history }) => {
               <input
                 type="hidden"
                 name="return_url"
-                value={"http://kshopit.herokuapp.com/afripaysuccess"}
+                value={"https://kigalimall.com/afripaysuccess"}
               ></input>
               <input
                 type="hidden"

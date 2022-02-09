@@ -31,20 +31,20 @@ const Footer = () => {
 
             <ul>
               <li>Contact Us:</li>
-              <ol>shopitltd@gmail.com</ol>
+              <ol>info@kigalimall.com</ol>
               <ol>+250788997616</ol>
               <ol>+250788872889</ol>
             </ul>
             <ul>
               <li>Our Social Media:</li>
               <ol>
-                <a href="https://facebook.com/" className="fa fa-facebook">
+                <a href="https://facebook.com/kigalimall" className="fa fa-facebook">
                   {" "}
                   Facebook
                 </a>
               </ol>
               <ol>
-                <a href="https://instagram.com/" class="fa fa-instagram">
+                <a href="https://instagram.com/kigalimall" class="fa fa-instagram">
                   {" "}
                   Instagram
                 </a>
@@ -63,8 +63,8 @@ const Footer = () => {
 
           <div className="footer-bar">
             <p>
-              &copy;KigaliMall 2020-2022,{" "}
-              <a href="www.kigalimall.com">www.kigalimall.com</a> All Rights
+              &copy;Kigali Mall 2020-2022,{" "}
+              <a href="https://kigalimall.com">kigalimall.com</a> All Rights
               Reserved
             </p>
           </div>

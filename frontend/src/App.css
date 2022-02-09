@@ -710,12 +710,12 @@ div.scrollmenu {
 
 div.scrollmenu a {
   display: inline-block;
-  color: white;
+  
   text-align: center;
   padding: 14px;
   text-decoration: none;
 }
 
 div.scrollmenu a:hover {
-  background-color: rgb(248, 242, 242);
+  background-color: rgb(12, 12, 12);
 }

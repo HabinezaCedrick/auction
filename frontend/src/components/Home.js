@@ -88,11 +88,11 @@ const Home = ({ match }) => {
                                                         </li> 
                         
                         
-                                                    ))}                                                  
+                                                    ))}                                                 
                    </div>
                     </div> 
                    <span className='text-white'><h5 className='fa fa-phone'>   <b>0788997616</b></h5></span> 
-                   <span className='text-white'><h5 className='fa fa-envelope-open'>   <b>shopitltd@gmail.com</b></h5></span> 
+                   <span className='text-white'><h5 className='fa fa-envelope-open'>   <b>info@kigalimall.com</b></h5></span> 
 
                     </nav>
 

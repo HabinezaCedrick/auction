@@ -38,7 +38,7 @@ const Cart = ({ history }) => {
         history.push('/login?redirect=shipping')
     }
 
-    const continueShopping = () => {
+    const backInShop = () => {
         history.push('/')
     }
 
@@ -101,7 +101,7 @@ const Cart = ({ history }) => {
                                 <p>Est. total: <span className="order-summary-values">{cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0).toFixed(2)} RWF</span></p>
 
                                 <hr />
-                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={continueShopping}>Continue Shopping</button>
+                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={backInShop}>Back</button>
                                 <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Checkout</button>
                             </div>
                         </div>
